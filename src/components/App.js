@@ -15,7 +15,7 @@ const initialState = {
   index: 0,
   answer: null,
   points: 0,
-  highscore: 0,
+  highscore: Number(localStorage.getItem("highscore")) || 0,
 };
 function reducer(state, action) {
   switch (action.type) {
@@ -43,12 +43,22 @@ function reducer(state, action) {
       };
     case "nextQuestion":
       return { ...state, index: state.index + 1, answer: null };
+
     case "finish":
+      const newHighscore =
+        state.points > state.highscore ? state.points : state.highscore;
+      localStorage.setItem("highscore", newHighscore);
       return {
         ...state,
         status: "finished",
-        highscore:
-          state.points > state.highscore ? state.points : state.highscore,
+        highscore: newHighscore,
+      };
+
+    case "restart":
+      return {
+        ...initialState,
+        questions: state.questions,
+        status: "ready",
       };
 
     default:
