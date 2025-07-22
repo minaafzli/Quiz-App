@@ -257,3 +257,50 @@ progress {
   font-size: inherit;
   padding: 0.8rem;
 }
+@media (max-width: 479px) {
+  .main {
+    width: 30rem;
+  }
+  .app-header {
+    width: 32rem;
+    margin-bottom: 4rem;
+  }
+
+  img {
+    width: 6rem;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+  h4 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 479px) and (max-width: 767px) {
+  .main {
+    width: 40rem;
+  }
+  .app-header {
+    width: 45rem;
+    margin-bottom: 4rem;
+  }
+
+  img {
+    width: 9rem;
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 3rem;
+  }
+}
